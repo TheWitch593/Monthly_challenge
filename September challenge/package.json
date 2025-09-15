@@ -1,0 +1,14 @@
+{
+  "name": "autumn-productivity-app",
+  "version": "1.0.0",
+  "description": "Cozy autumn-themed productivity app with calendar and pomodoro timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev"
+  },
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {}
+}

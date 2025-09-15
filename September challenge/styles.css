@@ -1,0 +1,785 @@
+/* Right Section Decorations - only png.22 leaf */
+.decorations {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.leaf-decoration {
+    width: 20px;
+    height: 20px;
+    image-rendering: pixelated;
+    opacity: 0.8;
+}/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
+
+/* Color Variables */
+:root {
+    --dark-red: #811f0d;
+    --medium-red: #cb521f;
+    --orange: #e69a4d;
+    --light-orange: #f3ca84;
+    --cream: #f6e3ba;
+    --bright-orange: #f4830b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background: url('./assets/background.jpeg') center/cover no-repeat;
+    color: var(--dark-red);
+    height: 100vh;
+    overflow: hidden;
+    image-rendering: pixelated;
+}
+
+/* Custom Title Bar */
+.title-bar {
+    height: 20px;
+    background: rgba(129, 31, 13, 0.9);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 5px;
+    -webkit-app-region: drag;
+}
+
+.title-bar-controls {
+    display: flex;
+    -webkit-app-region: no-drag;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: var(--cream);
+    width: 20px;
+    height: 15px;
+    font-size: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-left: 2px;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.close:hover {
+    background: #ff4444;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    height: calc(100vh - 20px);
+    padding: 15px;
+    gap: 15px;
+}
+
+
+/* Left Section */
+.left-section {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-section {
+    background: var(--medium-red);
+    border-radius: 25px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--dark-red);
+}
+
+.pumpkin-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+.pumpkin-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--dark-red);
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+
+.pumpkin-avatar img {
+    width: 45px;
+    height: 45px;
+    image-rendering: pixelated
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.progress-bar {
+    flex: 1;
+}
+
+.progress-label {
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.progress-track {
+    height: 12px;
+    background: var(--dark-red);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bright-orange), var(--light-orange));
+    width: 65%;
+    transition: width 0.3s ease;
+    border-radius: 6px;
+}
+
+/* Cafe Section - Made smaller than todo list */
+.cafe-section {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--dark-red);
+    background: var(--dark-red);
+    flex: 2%;
+}
+.cafe-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.cafe-image {
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated;
+    display: block;
+    border-radius: 0;
+}
+.cafe-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    image-rendering: pixelated;
+    display: block;
+}
+
+
+/* Control Buttons */
+.control-buttons {
+     background: var(--medium-red);
+    border-radius: 25px;
+    padding: 12px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--dark-red);
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+.control-icon-btn {
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--dark-red);
+    border-radius: 50%;
+    background: var(--medium-red);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.control-icon-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.control-icon-btn:active {
+    transform: translateY(0);
+}
+.contol-icon-btn:active {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.control-icon-btn img {
+     width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+.control-icon-btn img {
+    width: 40px;
+    height: 40px;
+    image-rendering: pixelated;
+}
+
+/* Timer button special styling */
+.timer-btn {
+    background: var(--dark-red) !important;
+}
+
+.timer-btn .timer-text {
+    color: var(--cream);
+    font-weight: 600;
+    font-size: 11px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Right Section - Made larger to accommodate bigger todo list */
+.right-section {
+    flex: 1.2; /* Larger than left section */
+    background: var(--medium-red);
+    border-radius: 25px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--dark-red);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Right Section with falling animations */
+.right-section {
+    flex: 1;
+    background: var(--medium-red);
+    border-radius: 25px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    border: 3px solid var(--dark-red);
+    overflow: hidden; /* Hide elements that fall outside */
+}
+
+/* Falling animation elements */
+.falling-leaf, .falling-pumpkin {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.falling-leaf {
+    width: 16px;
+    height: 16px;
+    animation: fallLeaf 4s linear infinite;
+}
+
+.falling-pumpkin {
+    width: 14px;
+    height: 14px;
+    animation: fallPumpkin 5s linear infinite;
+}
+
+/* Falling animations */
+@keyframes fallLeaf {
+    0% {
+        transform: translateY(-20px) translateX(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateY(25%) translateX(10px) rotate(90deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(50%) translateX(-5px) rotate(180deg);
+        opacity: 0.5;
+    }
+    75% {
+        transform: translateY(75%) translateX(8px) rotate(270deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(calc(100% + 50px)) translateX(0px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes fallPumpkin {
+    0% {
+        transform: translateY(-20px) translateX(0px) rotate(0deg);
+        opacity: 0.8;
+    }
+    20% {
+        transform: translateY(20%) translateX(-8px) rotate(72deg);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translateY(40%) translateX(12px) rotate(144deg);
+        opacity: 0.6;
+    }
+    60% {
+        transform: translateY(60%) translateX(-6px) rotate(216deg);
+        opacity: 0.5;
+    }
+    80% {
+        transform: translateY(80%) translateX(10px) rotate(288deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(calc(100% + 50px)) translateX(0px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.todo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-header h2 {
+    color: var(--cream);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.add-task-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--bright-orange);
+    border: 2px solid var(--dark-red);
+    color: var(--dark-red);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.add-task-btn:hover {
+    background: var(--orange);
+    transform: scale(1.1);
+}
+
+/* Todo List */
+.todo-list {
+    flex: 1; /* Takes up remaining space */
+    overflow-y: auto;
+    padding-right: 8px;
+    margin-bottom: 40px; /* Space for decorations */
+}
+
+/* Empty todo items (like in your image) */
+.todo-item-empty {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 8px 0;
+}
+
+.todo-checkbox-empty {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    background: transparent;
+    flex-shrink: 0;
+}
+
+.todo-line-empty {
+    flex: 1;
+    height: 2px;
+    background: var(--cream);
+    opacity: 0.6;
+    border-radius: 1px;
+}
+
+.todo-item {
+    background: var(--dark-red);
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideIn 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.todo-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--cream);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.todo-checkbox.checked {
+    background: var(--bright-orange);
+    border-color: var(--bright-orange);
+}
+
+.todo-checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    color: var(--dark-red);
+    font-size: 10px;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.todo-text {
+    flex: 1;
+    color: var(--cream);
+    font-size: 12px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.todo-text.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--cream);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 0.7;
+    transition: all 0.2s ease;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+    background: rgba(255, 68, 68, 0.3);
+    color: #ff4444;
+}
+
+/* Footer Decorations - png1 as footer */
+.decorations {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.leaf-decoration,
+.pumpkin-decoration {
+    width: 20px;
+    height: 20px;
+    image-rendering: pixelated;
+    opacity: 0.8;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 25px;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 3px solid var(--dark-red);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--medium-red);
+    padding-bottom: 10px;
+}
+
+.modal-header h3 {
+    color: var(--dark-red);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--dark-red);
+    cursor: pointer;
+    font-weight: 700;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.close-modal:hover {
+    background: rgba(129, 31, 13, 0.1);
+}
+
+/* Calendar Styles */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-top: 10px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-orange);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid var(--medium-red);
+}
+
+.calendar-day:hover {
+    background: var(--orange);
+}
+
+.calendar-day.today {
+    background: var(--bright-orange);
+    color: white;
+    font-weight: 700;
+    border-color: var(--dark-red);
+}
+
+/* Pomodoro Styles */
+.pomodoro-content {
+    text-align: center;
+}
+
+.timer-display-large {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark-red);
+    margin: 20px 0;
+    font-family: "Pixelify Sans", sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.session-controls, .break-controls, .custom-time {
+    margin: 15px 0;
+}
+
+.session-controls label, .break-controls label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--dark-red);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.session-controls select, .break-controls select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--medium-red);
+    background: white;
+    color: var(--dark-red);
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 500;
+    width: 100%;
+}
+
+.custom-time input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid var(--medium-red);
+    background: white;
+    color: var(--dark-red);
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 500;
+    width: 100%;
+}
+
+.session-counter {
+    margin: 12px 0;
+    color: var(--dark-red);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.timer-buttons button {
+    padding: 10px 16px;
+    border: 2px solid var(--dark-red);
+    border-radius: 8px;
+    background: var(--medium-red);
+    color: var(--cream);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.timer-buttons button:hover {
+    background: var(--dark-red);
+    transform: translateY(-1px);
+}
+
+/* Task Form */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-form input {
+    padding: 12px;
+    border: 2px solid var(--medium-red);
+    border-radius: 8px;
+    font-size: 14px;
+    background: white;
+    color: var(--dark-red);
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 500;
+}
+
+.task-form button {
+    padding: 12px;
+    background: var(--medium-red);
+    color: var(--cream);
+    border: 2px solid var(--dark-red);
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "Pixelify Sans", sans-serif;
+    font-weight: 600;
+}
+
+.task-form button:hover {
+    background: var(--dark-red);
+    transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar Styling */
+.todo-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: var(--dark-red);
+    border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background: var(--bright-orange);
+    border-radius: 3px;
+}
+
+.todo-list::-webkit-scrollbar-thumb:hover {
+    background: var(--orange);
+}
+
+.pumpkin-gif {
+    margin-top: 50px;
+    text-align: center;
+}
+.pumpkin-gif img {
+    width: 225px;
+    height: 120px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+}

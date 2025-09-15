@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autumn Productivity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Title Bar -->
+    <div class="title-bar">
+        <div class="title-bar-controls">
+            <button class="control-btn minimize" id="minimize-btn">−</button>
+            <button class="control-btn maximize" id="maximize-btn">□</button>
+            <button class="control-btn close" id="close-btn">×</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Left Section -->
+        <div class="left-section">
+            <!-- Top Progress Section with Pumpkin Icon -->
+            <div class="progress-section">
+                <div class="pumpkin-avatar">
+                    <img src="assets/pumpkin_icon.png" alt="Pumpkin Avatar">
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-label">PROGRESS</div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cafe Image (smaller than todo list) -->
+            <div class="cafe-section">
+                <img src="assets/photo.png" alt="Cozy Cafe" class="cafe-image">
+            </div>
+
+            
+            <!-- Control Buttons with circular icons -->
+            <div class="control-buttons">
+                <button class="control-icon-btn calendar-btn" id="calendar-btn">
+                    <img src="assets/calendar_icon.png" alt="Calendar" class="button-icon">
+                </button>
+                <button class="control-icon-btn timer-btn" id="timer-btn">
+                    <img src="assets/pomo_icon.png" alt="Timer" class="button-icon">
+                </button>
+                <button class="control-icon-btn settings-btn" id="settings-btn">
+                    <img src="assets/png1.png" alt="Settings" class="button-icon">
+            </div>
+            </div>
+
+            
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="todo-header">
+                <h2>TO DO</h2>
+                <button class="add-task-btn" id="add-task-btn">+</button>
+            </div>
+            
+            <div class="todo-list" id="todo-list">
+                <!-- Empty task circles like in the image -->
+                <div class="todo-item-empty">
+                    <div class="todo-checkbox-empty"></div>
+                    <div class="todo-line-empty"></div>
+                </div>
+                <div class="todo-item-empty">
+                    <div class="todo-checkbox-empty"></div>
+                    <div class="todo-line-empty"></div>
+                </div>
+                <div class="todo-item-empty">
+                    <div class="todo-checkbox-empty"></div>
+                    <div class="todo-line-empty"></div>
+                </div>
+                <div class="todo-item-empty">
+                    <div class="todo-checkbox-empty"></div>
+                    <div class="todo-line-empty"></div>
+                </div>
+            </div>
+            
+            <!-- Footer decorations -->
+            <div class="decorations">
+                <img src="assets/png2.png" alt="Leaf" class="leaf-decoration">
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar Modal -->
+    <div class="modal" id="calendar-modal">
+        <div class="modal-content calendar-content">
+            <div class="modal-header">
+                <h3>Calendar</h3>
+                <button class="close-modal" id="close-calendar">×</button>
+            </div>
+            <div class="calendar" id="calendar">
+                <!-- Calendar will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Pomodoro Modal with Autumn Theme -->
+    <div class="modal" id="pomodoro-modal">
+        <div class="modal-content pomodoro-content">
+            <div class="modal-header autumn-header">
+                <h3>🎃 Autumn Focus Timer 🍂</h3>
+                <button class="close-modal" id="close-pomodoro">×</button>
+            </div>
+             <div class="pumpkin-gif">
+                <div class="pumpkin-gif1">
+                  <img src="assets/pomo_gif.gif" alt="Pumpkin Gif" class="pumpkin-gif-img">
+                </div>
+            </div>
+            <div class="pomodoro-controls">
+                <div class="timer-display-large autumn-timer">
+                    <span id="timer-display">25:00</span>
+                </div>
+                <div class="session-controls autumn-controls">
+                    <label>🍁 Session Type:</label>
+                    <select id="session-type">
+                        <option value="short">🎃 Short Session (25min)</option>
+                        <option value="long">🍂 Long Session (50min)</option>
+                        <option value="custom">🍁 Custom Session</option>
+                    </select>
+                </div>
+                <div class="custom-time" id="custom-time" style="display: none;">
+                    <input type="number" id="custom-minutes" placeholder="Minutes" min="1" max="120">
+                </div>
+                <div class="break-controls autumn-controls">
+                    <label>🍂 Break Type:</label>
+                    <select id="break-type">
+                        <option value="short-break">🍁 Short Break (5min)</option>
+                        <option value="long-break">🎃 Long Break (15min)</option>
+                    </select>
+                </div>
+                <div class="session-counter autumn-counter">
+                    <span>🎃 Sessions Completed: <span id="session-count">0</span> 🍂</span>
+                </div>
+                <div class="timer-buttons autumn-buttons">
+                    <button id="start-timer">🍁 Start</button>
+                    <button id="pause-timer">🎃 Pause</button>
+                    <button id="reset-timer">🍂 Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="add-task-modal">
+        <div class="modal-content task-content">
+            <div class="modal-header">
+                <h3>Add New Task</h3>
+                <button class="close-modal" id="close-add-task">×</button>
+            </div>
+            <div class="task-form">
+                <input type="text" id="task-input" placeholder="Enter your task...">
+                <button id="save-task">Add Task</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
