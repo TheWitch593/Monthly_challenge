@@ -783,3 +783,17 @@ body {
     display: block;
     margin: 0 auto;
 }
+
+.pumpkin-gif2 {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.pumpkin-gif2 img {
+    width: 200px;
+    height: 94px;
+    image-rendering: pixelated;
+    display: block;
+    margin: 0 auto;
+}  
+

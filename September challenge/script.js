@@ -408,6 +408,7 @@ setInterval(() => {
     createFallingElement('pumpkin');
 }, 3500);
 
+
 // Remove the old general falling leaf function and replace with TO DO specific one
 // setInterval(createFallingLeaf, 3000); // Remove this line
 
