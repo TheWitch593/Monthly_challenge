@@ -4,6 +4,12 @@
 
 
 
+<img width="793" height="595" alt="Screenshot (4)" src="https://github.com/user-attachments/assets/76e03d61-6c36-4741-a881-b4ae473cbf2f" />
+
+
+
+
+
 > *“If September was a desktop app, it would smell like cinnamon, glow like pumpkin candles, and play lo-fi beats while you study.”*
 
 ---
@@ -105,8 +111,11 @@ npm start
 * Designed everything to look like a cozy pixel-art café.
 * Color palette = instant autumn vibes.
 
-![Timer Screenshot](Assets/46df52de-c6f8-455a-ae0f-fbb001964462.png)
-![Calendar Screenshot](Assets/2621bf4d-9f38-430b-a3cc-cea18aa658c6.png)
+
+<img width="801" height="598" alt="Screenshot (5)" src="https://github.com/user-attachments/assets/27469c43-323b-4481-bd48-14302e749d7e" />
+
+<img width="800" height="603" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/8c33b606-41c8-4676-aa68-cb528c7508f9" />
+
 
 ---
 
@@ -144,7 +153,6 @@ Copilot was my co-pilot for:
 ## 🙌 Acknowledgements
 
 * Codédex Monthly Challenge + GitHub Education Team 🤝
-* Inspiration from **GreenProductive**
 * Assets from Adobe Firefly & Vecteezy
 * Canva & Figma for the UI (love-hate forever 💔💖)
 
