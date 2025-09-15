@@ -77,9 +77,6 @@ I’m still a perfectionist and still working on features — but right now I’
 # Clone the repository
 git clone https://github.com/TheWitch593/Monthly_challenge.git
 
-# Go into the September challenge folder
-cd Monthly_challenge/September\ challenge
-
 # Install npm packages
 npm install
 
