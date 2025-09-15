@@ -1,5 +1,58 @@
 const { ipcRenderer } = require('electron');
+// Helper to get next session type
+function getNextSessionType(currentType) {
+    if (currentType === 'short' || currentType === 'custom' || currentType === 'long') {
+        return 'short-break';
+    } else if (currentType === 'short-break' || currentType === 'long-break') {
+        return 'short';
+    }
+    return 'short';
+}
 
+// Modified startTimer to handle session transitions
+function handleSessionComplete() {
+    const sessionType = document.getElementById('session-type').value;
+    if (sessionType === 'short' || sessionType === 'long' || sessionType === 'custom') {
+        sessionCount++;
+        updateSessionCounter();
+        localStorage.setItem('sessionCount', sessionCount.toString());
+        showNotification('Work session complete! Time for a break.');
+        // Start break automatically
+        let nextType = (sessionCount % 4 === 0) ? 'long-break' : 'short-break';
+        document.getElementById('session-type').value = nextType;
+        currentTime = timerConfigs[nextType];
+        updateTimerDisplay();
+        updateMainTimerDisplay();
+        isTimerRunning = false; // Ensure timer is not running before starting
+        startTimer();
+    } else if (sessionType === 'short-break' || sessionType === 'long-break') {
+        showNotification('Break finished! Ready for another session?');
+        document.getElementById('session-type').value = 'short';
+        currentTime = timerConfigs['short'];
+        updateTimerDisplay();
+        updateMainTimerDisplay();
+        isTimerRunning = false; // Ensure timer is stopped after break
+        // Optionally, you can auto-start the next work session by uncommenting the next line:
+        // startTimer();
+    }
+}
+
+// Override startTimer to use handleSessionComplete
+function startTimer() {
+    if (!isTimerRunning) {
+        isTimerRunning = true;
+        timerInterval = setInterval(() => {
+            currentTime--;
+            updateTimerDisplay();
+            updateMainTimerDisplay();
+
+            if (currentTime <= 0) {
+                pauseTimer();
+                handleSessionComplete();
+            }
+        }, 1000);
+    }
+}
 // Window controls
 document.getElementById('minimize-btn').addEventListener('click', () => {
     ipcRenderer.send('window-minimize');
@@ -243,29 +296,6 @@ document.getElementById('session-type').addEventListener('change', (e) => {
 document.getElementById('start-timer').addEventListener('click', startTimer);
 document.getElementById('pause-timer').addEventListener('click', pauseTimer);
 document.getElementById('reset-timer').addEventListener('click', resetTimer);
-
-function startTimer() {
-    if (!isTimerRunning) {
-        isTimerRunning = true;
-        timerInterval = setInterval(() => {
-            currentTime--;
-            updateTimerDisplay();
-            updateMainTimerDisplay();
-            
-            if (currentTime <= 0) {
-                pauseTimer();
-                // Timer completed
-                if (document.getElementById('session-type').value === 'work') {
-                    sessionCount++;
-                    updateSessionCounter();
-                    localStorage.setItem('sessionCount', sessionCount.toString());
-                }
-                alert('Timer completed!');
-                resetTimer();
-            }
-        }, 1000);
-    }
-}
 
 function pauseTimer() {
     isTimerRunning = false;
